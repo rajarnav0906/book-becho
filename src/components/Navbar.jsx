@@ -48,7 +48,7 @@ const Navbar = () => {
                 {navItems}
               </ul>
             </div>
-            <a className="btn btn-ghost text-3xl md:text-2xl">literaryLane</a>
+            <a className="btn btn-ghost text-3xl md:text-2xl text-[#b6d07a]">literaryLane</a>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">
