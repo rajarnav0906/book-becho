@@ -1,6 +1,6 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import Books from "../../public/books2.png";
 import oldMan from "../../public/oldman.jpg";
+import Navbar from "./Navbar";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -10,14 +10,15 @@ const Hero = () => {
 
   return (
     <>
-      <div className="relative hero-container h-screen flex items-center justify-center">
-        <img src={oldMan} alt="Old Man" className="absolute inset-0 w-full h-full object-cover z-0" />
+      {/* <Navbar /> */}
+      <div className="relative hero-container h-screen flex items-center justify-center bg-slate-950">
+        <img src={oldMan} alt="Old Man" className="absolute w-full h-full object-cover z-0 brightness-60 contrast-70 blur-sm" />
         <div className="relative z-10 text-center text-[#A6ADBB] p-4 bg-black bg-opacity-30 rounded-lg max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold">
             Ignite your imagination, <span className="text-[#b6d07a]">{text}</span><Cursor />
           </h1>
           <p className="mt-4">
-            Craving a captivating escape? Dive into a world of endless possibilities at LiteraryLane. Explore our vast collection of books, from timeless classics to modern masterpieces. Indulge in free reads or own your favorite stories. Let the pages transport you to distant lands, ignite your imagination, and enrich your soul. Your literary journey starts here.
+            Craving a captivating escape? Dive into a world of endless possibilities at literaryLane. Explore our vast collection of books, from timeless classics to modern masterpieces. Indulge in free reads or own your favorite stories. Let the pages transport you to distant lands, ignite your imagination, and enrich your soul. Your literary journey starts here.
           </p>
           <label className="input input-bordered flex items-center gap-2 mt-4">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-70">
@@ -29,7 +30,6 @@ const Hero = () => {
           <button className="btn mt-6">Get Started</button>
         </div>
       </div>
-      
     </>
   );
 };

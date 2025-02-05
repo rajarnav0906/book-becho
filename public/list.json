@@ -1,0 +1,106 @@
+[
+    {
+        "id" : 1,
+        "name" : "Story Book",
+        "category" : "Free",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 0
+    },
+    {
+        "id" : 2,
+        "name" : "Agricultural Book",
+        "category" : "Farming",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 400
+    },
+    {
+        "id" : 3,
+        "name" : "Gym Book",
+        "category" : "Fitness",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 200
+    },
+    {
+        "id" : 4,
+        "name" : "Story Book",
+        "category" : "Free",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 0
+    },
+    {
+        "id" : 5,
+        "name" : "Story Book",
+        "category" : "Motivation",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 150
+    },
+    {
+        "id" : 6,
+        "name" : "Story Book",
+        "category" : "Free",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 0
+    },
+    {
+        "id" : 7,
+        "name" : "Motivational Book",
+        "category" : "Motivation",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 400
+    },
+    {
+        "id" : 8,
+        "name" : "Religious Book",
+        "category" : "Religious",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 40
+    },
+    {
+        "id" : 9,
+        "name" : "Story Book",
+        "category" : "Free",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 0
+    },
+    {
+        "id" : 10,
+        "name" : "Recepie Book",
+        "category" : "Cooking",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 80
+    },
+    {
+        "id" : 11,
+        "name" : "Story Book",
+        "category" : "Free",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 0
+    },
+    {
+        "id" : 12,
+        "name" : "Comedy Book",
+        "category" : "Entertainment",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 50
+    },
+    {
+        "id" : 13,
+        "name" : "Militant Book",
+        "category" : "Defence",
+        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
+        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
+        "price" : 20
+    }
+]

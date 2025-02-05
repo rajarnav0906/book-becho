@@ -17,8 +17,9 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
-        <div className="navbar bg-base-100">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-30">
+      <div className="max-w-screen-full container mx-auto md:px-20 px-4 ">
+        <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -56,7 +57,7 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <label className="px-3 py-1 border rounded:md input flex items-center gap-2">
-                <input type="text" className="grow outline:none" placeholder="Search" />
+                <input type="text" className="outline:none" placeholder="Search" />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -103,6 +104,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
