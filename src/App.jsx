@@ -1,3 +1,5 @@
+
+import { CardSpotlight } from "./components/CardSpotlight"
 import Footer from "./components/Footer"
 import FreeBooks from "./components/FreeBooks"
 import Hero from "./components/Hero"
@@ -14,8 +16,10 @@ function App() {
     <>
       <Navbar></Navbar>
       <Hero></Hero>
-      {/* <FreeBooks></FreeBooks> */}
-      {/* <LampDemo></LampDemo> */}
+      {/* <FreeBooks></FreeBooks>  */}
+      {/* <LampDemo></LampDemo>  */}
+      <CardSpotlight></CardSpotlight>
+      
       <Footer></Footer>
     </>
   )
