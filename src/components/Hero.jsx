@@ -1,6 +1,7 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import oldMan from "../../public/oldman.jpg";
 import Navbar from "./Navbar";
+import { CardSpotlight } from "./CardSpotlight";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -28,8 +29,12 @@ const Hero = () => {
             <input type="text" className="grow" placeholder="Email" />
           </label>
           <button className="btn mt-6">Get Started</button>
+          {/* <CardSpotlight></CardSpotlight> */}
         </div>
+        {/* <CardSpotlight></CardSpotlight> */}
       </div>
+
+      
     </>
   );
 };

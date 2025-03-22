@@ -1,106 +1,106 @@
 [
     {
-        "id" : 1,
-        "name" : "Story Book",
-        "category" : "Free",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 0
+        "id": 1,
+        "name": "The Adventure Chronicles",
+        "category": "Free",
+        "title": "A thrilling journey through unexplored lands and hidden treasures.",
+        "image": "https://img.freepik.com/free-photo/mystical-dark-forest-night_1150-11097.jpg",
+        "price": 0
     },
     {
-        "id" : 2,
-        "name" : "Agricultural Book",
-        "category" : "Farming",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 400
+        "id": 2,
+        "name": "The Modern Farmer's Guide",
+        "category": "Farming",
+        "title": "A comprehensive guide to modern farming techniques and sustainability.",
+        "image": "https://img.freepik.com/free-photo/moody-dark-farmland-scenery_23-2149875423.jpg",
+        "price": 350
     },
     {
-        "id" : 3,
-        "name" : "Gym Book",
-        "category" : "Fitness",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 200
+        "id": 3,
+        "name": "Fitness for Life",
+        "category": "Fitness",
+        "title": "A guide to achieving optimal health through exercise and nutrition.",
+        "image": "https://img.freepik.com/free-photo/dark-moody-gym-equipment_23-2149985723.jpg",
+        "price": 250
     },
     {
-        "id" : 4,
-        "name" : "Story Book",
-        "category" : "Free",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 0
+        "id": 4,
+        "name": "Children's Fairy Tales",
+        "category": "Free",
+        "title": "A collection of timeless fairy tales for young readers.",
+        "image": "https://img.freepik.com/free-photo/enchanted-dark-forest-fantasy_1150-12134.jpg",
+        "price": 0
     },
     {
-        "id" : 5,
-        "name" : "Story Book",
-        "category" : "Motivation",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 150
+        "id": 5,
+        "name": "The Power Within",
+        "category": "Motivation",
+        "title": "A motivational book to inspire self-growth and success.",
+        "image": "https://img.freepik.com/free-photo/dark-sky-silhouette-mountain-peak_23-2148967542.jpg",
+        "price": 200
     },
     {
-        "id" : 6,
-        "name" : "Story Book",
-        "category" : "Free",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 0
+        "id": 6,
+        "name": "The Storyteller's Art",
+        "category": "Free",
+        "title": "A collection of beautiful short stories from various genres.",
+        "image": "https://img.freepik.com/free-photo/open-book-dark-mystical-setting_53876-152432.jpg",
+        "price": 0
     },
     {
-        "id" : 7,
-        "name" : "Motivational Book",
-        "category" : "Motivation",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 400
+        "id": 7,
+        "name": "Mindset Mastery",
+        "category": "Motivation",
+        "title": "A step-by-step guide to changing your mindset for success.",
+        "image": "https://img.freepik.com/free-photo/moody-dark-sky-motivation_23-2149236541.jpg",
+        "price": 300
     },
     {
-        "id" : 8,
-        "name" : "Religious Book",
-        "category" : "Religious",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 40
+        "id": 8,
+        "name": "Sacred Teachings",
+        "category": "Religious",
+        "title": "An insightful book on spiritual wisdom and religious teachings.",
+        "image": "https://img.freepik.com/free-photo/dark-spiritual-mystic-temple_23-2149584762.jpg",
+        "price": 50
     },
     {
-        "id" : 9,
-        "name" : "Story Book",
-        "category" : "Free",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 0
+        "id": 9,
+        "name": "Legends and Myths",
+        "category": "Free",
+        "title": "A fascinating look at myths and legends from around the world.",
+        "image": "https://img.freepik.com/free-photo/ancient-mystic-book-dark-room_1150-11756.jpg",
+        "price": 0
     },
     {
-        "id" : 10,
-        "name" : "Recepie Book",
-        "category" : "Cooking",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 80
+        "id": 10,
+        "name": "The Chef's Companion",
+        "category": "Cooking",
+        "title": "A recipe book featuring gourmet dishes and cooking techniques.",
+        "image": "https://img.freepik.com/free-photo/moody-dark-kitchen-chef-cooking_23-2149876431.jpg",
+        "price": 100
     },
     {
-        "id" : 11,
-        "name" : "Story Book",
-        "category" : "Free",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 0
+        "id": 11,
+        "name": "Timeless Stories",
+        "category": "Free",
+        "title": "Classic stories that have been passed down through generations.",
+        "image": "https://img.freepik.com/free-photo/vintage-book-dark-library_53876-168999.jpg",
+        "price": 0
     },
     {
-        "id" : 12,
-        "name" : "Comedy Book",
-        "category" : "Entertainment",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 50
+        "id": 12,
+        "name": "The Comedy Collection",
+        "category": "Entertainment",
+        "title": "A hilarious collection of jokes, funny stories, and anecdotes.",
+        "image": "https://img.freepik.com/free-photo/dark-clown-mysterious-smile_1150-12345.jpg",
+        "price": 75
     },
     {
-        "id" : 13,
-        "name" : "Militant Book",
-        "category" : "Defence",
-        "title" : "Lorem, jrfrv huhrefh hwr vw iowduq d wnw[ucwc wc cmdh8nr9fy hnfhnvmwve rfiwdfhnwf",
-        "image" : "https://media.istockphoto.com/id/1357073787/photo/unrecognizable-man-holding-stack-of-books-while-studying-in-a-library.jpg?s=2048x2048&w=is&k=20&c=IiBrNq7mEMBkRluKgadrWVZYmOEyv5R6tgkz8xFH33w=",
-        "price" : 20
+        "id": 13,
+        "name": "Tactical Defense Strategies",
+        "category": "Defence",
+        "title": "An in-depth look at modern defense tactics and strategies.",
+        "image": "https://img.freepik.com/free-photo/soldier-dark-battlefield-smoke_1150-11987.jpg",
+        "price": 300
     }
 ]
