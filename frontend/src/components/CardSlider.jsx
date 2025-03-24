@@ -63,9 +63,20 @@ const CardSlider = () => {
                 {/* Price & Button */}
                 <div className="relative z-10 flex justify-between items-center w-full mt-3">
                   <p className="text-lg font-semibold text-yellow-200">${book.price}</p>
-                  <button className="flex items-center gap-2 border border-gray-500 px-3 py-1 rounded-md text-[#A6ADBB] bg-transparent hover:bg-[#b6d07a] hover:text-black transition duration-300">
-                    Buy Now
-                  </button>
+                  {book.read_link ? (
+                    <a
+                      href={book.read_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 border border-gray-500 px-3 py-1 rounded-md text-[#A6ADBB] bg-transparent hover:bg-[#b6d07a] hover:text-black transition duration-300"
+                    >
+                      Read Now
+                    </a>
+                  ) : (
+                    <button className="flex items-center gap-2 border border-gray-500 px-3 py-1 rounded-md text-[#A6ADBB] bg-transparent hover:bg-[#b6d07a] hover:text-black transition duration-300">
+                      Buy Now
+                    </button>
+                  )}
                 </div>
               </CardSpotlight>
             </div>

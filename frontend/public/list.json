@@ -2,105 +2,251 @@
     {
         "id": 1,
         "name": "The Adventure Chronicles",
+        "author": "John Carter",
         "category": "Free",
         "title": "A thrilling journey through unexplored lands and hidden treasures.",
-        "image": "https://img.freepik.com/free-photo/mystical-dark-forest-night_1150-11097.jpg",
-        "price": 0
+        "image": "https://img.freepik.com/free-photo/adventure-explorer-mountains_1150-11097.jpg",
+        "price": 0,
+        "read_link": "https://www.thriftbooks.com/series/the-adventure-chronicles/132115/"
     },
     {
         "id": 2,
-        "name": "The Modern Farmer's Guide",
-        "category": "Farming",
-        "title": "A comprehensive guide to modern farming techniques and sustainability.",
-        "image": "https://img.freepik.com/free-photo/moody-dark-farmland-scenery_23-2149875423.jpg",
-        "price": 350
+        "name": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "category": "Free",
+        "title": "A classic novel of manners and romance.",
+        "image": "https://tse3.mm.bing.net/th?id=OIP.Kip6DWSi1dM43CIlx_HVWQHaKW&pid=Api",
+        "price": 0,
+        "read_link": "https://www.gutenberg.org/ebooks/1342"
     },
     {
         "id": 3,
-        "name": "Fitness for Life",
-        "category": "Fitness",
-        "title": "A guide to achieving optimal health through exercise and nutrition.",
-        "image": "https://img.freepik.com/free-photo/dark-moody-gym-equipment_23-2149985723.jpg",
-        "price": 250
+        "name": "Moby Dick",
+        "author": "Herman Melville",
+        "category": "Free",
+        "title": "An epic tale of a sea captain's obsession with a white whale.",
+        "image": "https://tse1.mm.bing.net/th?id=OIP.WTbE7_qIyqfSbkS2CNdPRAHaJl&pid=Api",
+        "price": 0,
+        "read_link": "https://www.gutenberg.org/ebooks/2701"
     },
     {
         "id": 4,
         "name": "Children's Fairy Tales",
+        "author": "Alice Brown",
         "category": "Free",
         "title": "A collection of timeless fairy tales for young readers.",
-        "image": "https://img.freepik.com/free-photo/enchanted-dark-forest-fantasy_1150-12134.jpg",
-        "price": 0
+        "image": "https://img.freepik.com/free-photo/fairytale-magic-castle-moonlight_1150-12134.jpg",
+        "price": 0,
+        "read_link": "https://www.gutenberg.org/ebooks/1597"
     },
     {
         "id": 5,
-        "name": "The Power Within",
-        "category": "Motivation",
-        "title": "A motivational book to inspire self-growth and success.",
-        "image": "https://img.freepik.com/free-photo/dark-sky-silhouette-mountain-peak_23-2148967542.jpg",
-        "price": 200
+        "name": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "category": "Free",
+        "title": "A story of wealth, love, and the American Dream.",
+        "image": "https://tse4.mm.bing.net/th?id=OIP.Qn1y6j9UH9FMSEd4KGZDwgHaMH&pid=Api",
+        "price": 220,
+        "read_link": "https://www.gutenberg.org/ebooks/64317"
     },
     {
         "id": 6,
-        "name": "The Storyteller's Art",
+        "name": "Legends and Myths",
+        "author": "Sophia Clark",
         "category": "Free",
-        "title": "A collection of beautiful short stories from various genres.",
-        "image": "https://img.freepik.com/free-photo/open-book-dark-mystical-setting_53876-152432.jpg",
-        "price": 0
+        "title": "A fascinating look at myths and legends from around the world.",
+        "image": "https://tse4.mm.bing.net/th?id=OIP.zKSfZtcOifkACjZzwFzvUgHaLI&pid=Api",
+        "price": 0,
+        "read_link": "https://www.gutenberg.org/ebooks/37835"
     },
     {
         "id": 7,
-        "name": "Mindset Mastery",
-        "category": "Motivation",
-        "title": "A step-by-step guide to changing your mindset for success.",
-        "image": "https://img.freepik.com/free-photo/moody-dark-sky-motivation_23-2149236541.jpg",
-        "price": 300
+        "name": "Dracula",
+        "author": "Bram Stoker",
+        "category": "Free",
+        "title": "The legendary vampire tale of Count Dracula.",
+        "image": "https://img.freepik.com/free-photo/vampire-castle-horror-mist_1150-11721.jpg",
+        "price": 40,
+        "read_link": "https://www.gutenberg.org/ebooks/345"
     },
     {
         "id": 8,
-        "name": "Sacred Teachings",
-        "category": "Religious",
-        "title": "An insightful book on spiritual wisdom and religious teachings.",
-        "image": "https://img.freepik.com/free-photo/dark-spiritual-mystic-temple_23-2149584762.jpg",
-        "price": 50
+        "name": "Frankenstein",
+        "author": "Mary Shelley",
+        "category": "Free",
+        "title": "A gothic horror story about science and creation.",
+        "image": "https://img.freepik.com/free-photo/gothic-scientific-laboratory-dark_1150-12647.jpg",
+        "price": 0,
+        "read_link": "https://www.gutenberg.org/ebooks/84"
     },
     {
         "id": 9,
-        "name": "Legends and Myths",
+        "name": "Alice's Adventures in Wonderland",
+        "author": "Lewis Carroll",
         "category": "Free",
-        "title": "A fascinating look at myths and legends from around the world.",
-        "image": "https://img.freepik.com/free-photo/ancient-mystic-book-dark-room_1150-11756.jpg",
-        "price": 0
+        "title": "A whimsical adventure down the rabbit hole.",
+        "image": "https://img.freepik.com/free-photo/fantasy-mystical-door-rabbit-hole_1150-12578.jpg",
+        "price": 0,
+        "read_link": "https://www.gutenberg.org/ebooks/11"
     },
     {
         "id": 10,
-        "name": "The Chef's Companion",
-        "category": "Cooking",
-        "title": "A recipe book featuring gourmet dishes and cooking techniques.",
-        "image": "https://img.freepik.com/free-photo/moody-dark-kitchen-chef-cooking_23-2149876431.jpg",
-        "price": 100
+        "name": "The Call of the Wild",
+        "author": "Jack London",
+        "category": "Free",
+        "title": "A gripping tale of survival in the Alaskan wilderness.",
+        "image": "https://img.freepik.com/free-photo/wild-wolf-alaska-snow_1150-12999.jpg",
+        "price": 100,
+        "read_link": "https://www.gutenberg.org/ebooks/215"
     },
     {
         "id": 11,
-        "name": "Timeless Stories",
-        "category": "Free",
-        "title": "Classic stories that have been passed down through generations.",
-        "image": "https://img.freepik.com/free-photo/vintage-book-dark-library_53876-168999.jpg",
-        "price": 0
+        "name": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "category": "Paid",
+        "title": "A novel about racial injustice and moral growth.",
+        "image": "https://img.freepik.com/free-photo/vintage-law-courtroom-scene_1150-14045.jpg",
+        "price": 250,
+        "read_link": "https://www.amazon.com/dp/0061120081"
     },
     {
         "id": 12,
-        "name": "The Comedy Collection",
-        "category": "Entertainment",
-        "title": "A hilarious collection of jokes, funny stories, and anecdotes.",
-        "image": "https://img.freepik.com/free-photo/dark-clown-mysterious-smile_1150-12345.jpg",
-        "price": 75
+        "name": "1984",
+        "author": "George Orwell",
+        "category": "Paid",
+        "title": "A dystopian novel about totalitarianism and surveillance.",
+        "image": "https://img.freepik.com/free-photo/dystopian-cityscape-dark-skies_1150-13124.jpg",
+        "price": 300,
+        "read_link": "https://www.amazon.com/dp/0451524934"
     },
     {
         "id": 13,
-        "name": "Tactical Defense Strategies",
-        "category": "Defence",
-        "title": "An in-depth look at modern defense tactics and strategies.",
-        "image": "https://img.freepik.com/free-photo/soldier-dark-battlefield-smoke_1150-11987.jpg",
-        "price": 300
+        "name": "Brave New World",
+        "author": "Aldous Huxley",
+        "category": "Paid",
+        "title": "A futuristic dystopia of engineered society.",
+        "image": "https://img.freepik.com/free-photo/futuristic-society-laboratory_1150-16024.jpg",
+        "price": 280,
+        "read_link": "https://www.amazon.com/dp/0060850523"
+    },
+    {
+        "id": 14,
+        "name": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "category": "Paid",
+        "title": "A coming-of-age novel about teenage rebellion.",
+        "image": "https://img.freepik.com/free-photo/teenager-alone-city-night_1150-14432.jpg",
+        "price": 190,
+        "read_link": "https://www.amazon.com/dp/0316769487"
+    },
+    {
+        "id": 15,
+        "name": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "category": "Paid",
+        "title": "A fantasy adventure of dragons and treasure.",
+        "image": "https://img.freepik.com/free-photo/mystical-fantasy-dragon-cave_1150-16342.jpg",
+        "price": 450,
+        "read_link": "https://www.amazon.com/dp/054792822X"
+    },
+    {
+        "id": 16,
+        "name": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "category": "Paid",
+        "title": "An epic fantasy saga of Middle-earth.",
+        "image": "https://img.freepik.com/free-photo/fantasy-battle-warriors-middle-earth_1150-16578.jpg",
+        "price": 1000,
+        "read_link": "https://www.amazon.com/dp/0544003411"
+    },
+    {
+        "id": 17,
+        "name": "Dune",
+        "author": "Frank Herbert",
+        "category": "Paid",
+        "title": "A sci-fi masterpiece of politics and prophecy.",
+        "image": "https://img.freepik.com/free-photo/futuristic-desert-planet-space_1150-16699.jpg",
+        "price": 350,
+        "read_link": "https://www.amazon.com/dp/0441013597"
+    },
+    {
+        "id": 18,
+        "name": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "category": "Paid",
+        "title": "A dystopian story about book burning.",
+        "image": "https://img.freepik.com/free-photo/burning-books-flames-dark_1150-16809.jpg",
+        "price": 275,
+        "read_link": "https://www.amazon.com/dp/1451673310"
+    },
+    {
+        "id": 19,
+        "name": "The Alchemist",
+        "author": "Paulo Coelho",
+        "category": "Paid",
+        "title": "A philosophical novel about destiny and dreams.",
+        "image": "https://img.freepik.com/free-photo/mystical-desert-alchemist-wisdom_1150-17032.jpg",
+        "price": 320,
+        "read_link": "https://www.amazon.com/dp/0062315005"
+    },
+    {
+        "id": 20,
+        "name": "The Shining",
+        "author": "Stephen King",
+        "category": "Paid",
+        "title": "A horror novel about a haunted hotel.",
+        "image": "https://img.freepik.com/free-photo/haunted-hotel-dark-corridor_1150-17219.jpg",
+        "price": 340,
+        "read_link": "https://www.amazon.com/dp/0307743659"
+    },
+    {
+        "id": 21,
+        "name": "A Game of Thrones",
+        "author": "George R.R. Martin",
+        "category": "Paid",
+        "title": "A fantasy saga of power, politics, and dragons.",
+        "image": "https://img.freepik.com/free-photo/fantasy-throne-kingdom-warriors_1150-17429.jpg",
+        "price": 600,
+        "read_link": "https://www.amazon.com/dp/0553593714"
+    },
+    {
+        "id": 22,
+        "name": "It",
+        "author": "Stephen King",
+        "category": "Paid",
+        "title": "A terrifying story of a shape-shifting clown.",
+        "image": "https://img.freepik.com/free-photo/creepy-clown-horror-dark-street_1150-17644.jpg",
+        "price": 450,
+        "read_link": "https://www.amazon.com/dp/1501142976"
+    },
+    {
+        "id": 23,
+        "name": "The Road",
+        "author": "Cormac McCarthy",
+        "category": "Paid",
+        "title": "A post-apocalyptic journey of survival.",
+        "image": "https://img.freepik.com/free-photo/apocalyptic-landscape-survival-story_1150-17853.jpg",
+        "price": 310,
+        "read_link": "https://www.amazon.com/dp/0307387895"
+    },
+    {
+        "id": 24,
+        "name": "Shogun",
+        "author": "James Clavell",
+        "category": "Paid",
+        "title": "A historical epic of feudal Japan.",
+        "image": "https://img.freepik.com/free-photo/samurai-feudal-japan-warrior_1150-18034.jpg",
+        "price": 420,
+        "read_link": "https://www.amazon.com/dp/0340766161"
+    },
+    {
+        "id": 25,
+        "name": "Jurassic Park",
+        "author": "Michael Crichton",
+        "category": "Paid",
+        "title": "A thrilling sci-fi adventure about dinosaurs.",
+        "image": "https://img.freepik.com/free-photo/dinosaur-park-jungle-prehistoric_1150-18242.jpg",
+        "price": 380,
+        "read_link": "https://www.amazon.com/dp/0345538986"
     }
 ]
