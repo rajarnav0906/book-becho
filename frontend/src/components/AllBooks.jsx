@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 import { CardSpotlight } from "./CardSpotlight";
 
 const AllBooks = () => {
@@ -13,7 +14,7 @@ const AllBooks = () => {
         return response.json();
       })
       .then((data) => {
-        setBooks(data); // Set all books (both free and paid)
+        setBooks(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -27,16 +28,33 @@ const AllBooks = () => {
   if (books.length === 0) return <p className="text-white text-center">No books available</p>;
 
   return (
-    <div className="bg-gray-900 p-20 pb-6">
+    <motion.div
+      className="bg-gray-900 p-20 pb-6 min-h-screen"
+      initial={{ opacity: 0, y: 20 }} // Starts faded out and slightly lower
+      animate={{ opacity: 1, y: 0 }} // Fades in and moves to position
+      exit={{ opacity: 0, y: -20 }} // Fades out smoothly on exit
+      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
+    >
       {/* Header Section */}
       <h2 className="text-center text-[#b6d07a] text-2xl md:text-3xl font-bold mb-10 md:mb-12">
         📚 Explore Our Book Collection
       </h2>
 
       {/* Books Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6">
-        {books.map((book) => (
-          <div key={book.id} className="flex justify-center">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
+        {books.map((book, index) => (
+          <motion.div
+            key={book.id}
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.1, duration: 0.4 }} // Staggered effect for each book
+          >
             <CardSpotlight className="relative w-[260px] h-[370px] p-6 text-white shadow-xl rounded-lg flex flex-col justify-between">
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
@@ -70,10 +88,10 @@ const AllBooks = () => {
                 </a>
               </div>
             </CardSpotlight>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

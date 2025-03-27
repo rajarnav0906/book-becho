@@ -28,7 +28,7 @@ const Hero = () => {
             </svg>
             <input type="text" className="grow" placeholder="Email" />
           </label>
-          <button className="btn mt-6">Get Started</button>
+          <button className="btn mt-6 hover:bg-[#b6d07a] hover:text-black">Get Started</button>
           {/* <CardSpotlight></CardSpotlight> */}
         </div>
         {/* <CardSpotlight></CardSpotlight> */}
