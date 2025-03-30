@@ -2,10 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Login from "./Login";
+import { useForm } from "react-hook-form";
 
 
 const cartoonBg = "/signUpImg.jpg";
 const SignUp = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,14 +51,16 @@ const SignUp = () => {
         </p>
 
         {/* Sign-Up Form */}
-        <form className="mt-6 space-y-4">
+        <form className="mt-6 space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label className="block text-sm font-medium">Full Name</label>
             <input
               type="text"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
               placeholder="Enter your name"
+              {...register("name", { required: true })}
             />
+            {errors.name && <span className="text-red-500 text-sm mt-1">This field is required</span>}
           </div>
 
           <div>
@@ -59,7 +69,9 @@ const SignUp = () => {
               type="email"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
               placeholder="Enter your email"
+              {...register("email", { required: true })}
             />
+            {errors.email && <span className="text-red-500 text-sm mt-1">This field is required</span>}
           </div>
 
           <div>
@@ -68,17 +80,19 @@ const SignUp = () => {
               type="password"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
               placeholder="Create a password"
+              {...register("password", { required: true })}
             />
+            {errors.password && <span className="text-red-500 text-sm mt-1">This field is required</span>}
           </div>
 
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium">Confirm Password</label>
             <input
               type="password"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
               placeholder="Confirm your password"
             />
-          </div>
+          </div> */}
 
           <button
             type="submit"

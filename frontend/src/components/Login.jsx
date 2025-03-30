@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
     return (
       <>
         <dialog id="my_modal_3" className="modal">
@@ -15,15 +23,17 @@ const Login = () => {
             <p className="text-gray-400 text-center text-sm mt-1">Welcome back! Please log in to continue.</p>
   
             {/* Login Form */}
-            <form className="mt-6 space-y-4">
+            <form className="mt-6 space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label className="block text-sm font-medium">Email</label>
-                <input type="email" className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]" placeholder="Enter your email" />
+                <input type="email" className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]" placeholder="Enter your email" {...register("email", { required: true })} />
+                {errors.email && <span className="text-red-500 text-sm mt-1">This field is required</span>}
               </div>
   
               <div>
                 <label className="block text-sm font-medium">Password</label>
-                <input type="password" className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]" placeholder="Enter your password" />
+                <input type="password" className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]" placeholder="Enter your password" {...register("password", { required: true })} />
+                {errors.password && <span className="text-red-500 text-sm mt-1">This field is required</span>}
               </div>
   
               {/* Login Button */}
@@ -43,4 +53,3 @@ const Login = () => {
   };
   
   export default Login;
-  
