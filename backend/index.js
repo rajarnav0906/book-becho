@@ -1,8 +1,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './connection/db.js';
+import userRoutes from './routes/user.router.js';
 
 const app = express()
+
+app.use(express.json()); // allows express to use JSON body parsing
 
 dotenv.config({
   path: './.env'
@@ -12,6 +15,9 @@ const PORT = process.env.PORT || 4000;
 
 // database configuration
 connectDB();
+
+// routes
+app.use("/api/v1", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
