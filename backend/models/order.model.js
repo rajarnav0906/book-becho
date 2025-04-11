@@ -1,19 +1,29 @@
 import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Types.ObjectId,
-        ref: "user"
-    },
-    book: {
-        type: mongoose.Types.ObjectId,
-        ref: "books"
-    },
-    status: {
-        type: String,
-        enum: ['order placed', 'out for delivery', 'delivered', 'canceled'],
-        default: 'order placed'
-    },
-}, {timestamps: true})
+  buyer: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+  seller: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+  book: {
+    type: mongoose.Types.ObjectId,
+    ref: "Book",
+    required: true
+  },
+  status: {
+    type: String,
+    enum: ['order placed', 'out for delivery', 'delivered', 'cancelled'],
+    default: 'order placed'
+  },
+  message: {
+    type: String // optional message for contact/purchase
+  }
+}, { timestamps: true });
 
-export default mongoose.model("order", orderSchema);
+export default mongoose.model("Order", orderSchema);

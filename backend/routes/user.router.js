@@ -2,6 +2,7 @@ import {Router} from "express";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import {authenticateToken} from "./userAuth.js";
 
 const router = Router();
 
@@ -55,38 +56,72 @@ router.post("/signup", async (req, res) => {
 
 // Log-in
 router.post("/log-in", async (req, res) => {
-    try {
-      const {username, password} = req.body;
+  try {
+    const { username, password } = req.body;
 
-      // find if existingUser
-      const existingUser = await User.findOne({username});
-      if(!existingUser){
-        return res.status(400).json({message: "User not found!"});
-      }
-
-      await bcrypt.compare(password, existingUser.password, (err, data) => {
-        if(data){
-          const authClaims = [
-            {name: existingUser.username},
-            {role: existingUser.role}
-          ]
-          const token = jwt.sign({authClaims}, `${process.env.JWT_SECRET_KEY}`, {expiresIn: "5d"});
-          res.json({
-            id: existingUser._id,
-            username: existingUser.username,
-            role: existingUser.role,
-            token: token
-          });
-        }
-        else{
-            return res.status(400).json({message: "Invalid credentials!"});
-        }
-      })
-    } 
-    catch (error) {
-      res.status(500).json({message: "Internal server error"});
+    const existingUser = await User.findOne({ username });
+    if (!existingUser) {
+      return res.status(400).json({ message: "User not found!" });
     }
-  });
+
+    const isMatch = await bcrypt.compare(password, existingUser.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid credentials!" });
+    }
+
+    // ✅ FIX: Use flat object
+    const payload = {
+      id: existingUser._id,
+      username: existingUser.username,
+      role: existingUser.role
+    };
+
+    const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
+      expiresIn: "30d"
+    });
+
+    res.json({
+      id: existingUser._id,
+      username: existingUser.username,
+      role: existingUser.role,
+      token: token
+    });
+
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
+
+
+// get user information
+router.get("/get-user-information", authenticateToken, async (req, res) => {
+  try {
+    const {id} = req.headers;
+    const data = await User.findById(id).select("-password");
+    return res.status(200).json(data);
+
+  } 
+  catch (error) {
+    res.status(500).json({message : "Internal server error"});
+  }
+});
+
+
+// update address
+router.put("/update-address", authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.headers;
+    const { address } = req.body;
+    await User.findByIdAndUpdate(id, { address: address });
+    return res.status(200).json({message: "Address updated successfully"});
+  } 
+  catch (error) {
+    res.status(500).json({message : "Internal server error"});
+  }
+});
 
 
 
