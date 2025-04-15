@@ -53,7 +53,6 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-
 // Log-in
 router.post("/log-in", async (req, res) => {
   try {
@@ -93,9 +92,6 @@ router.post("/log-in", async (req, res) => {
   }
 });
 
-
-
-
 // get user information
 router.get("/get-user-information", authenticateToken, async (req, res) => {
   try {
@@ -108,7 +104,6 @@ router.get("/get-user-information", authenticateToken, async (req, res) => {
     res.status(500).json({message : "Internal server error"});
   }
 });
-
 
 // update address
 router.put("/update-address", authenticateToken, async (req, res) => {

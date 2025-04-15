@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './connection/db.js';
 import userRoutes from './routes/user.router.js';
 import adminRoutes from "./routes/book.router.js";
+import favoriteRoutes from "./routes/favorite.router.js";
 
 const app = express()
 
@@ -18,8 +19,9 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 
 // routes
-app.use("/api/v1/users", userRoutes);
-app.use("/api/v1/admin", adminRoutes);
+app.use("/api/v1", userRoutes);
+app.use("/api/v1", adminRoutes);
+app.use("/api/v1", favoriteRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)

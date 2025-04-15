@@ -16,7 +16,7 @@ export const authenticateToken = async (req, res, next) => {
 
     // Find user in DB to attach full user data
     const user = await User.findById(decoded.id).select("-password");
-    console.log("user", user); // remove password from response
+    // console.log("user", user); // remove password from response
     if (!user) {
       return res.status(404).json({ message: "User not found." });
     }
