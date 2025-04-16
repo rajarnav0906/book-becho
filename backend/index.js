@@ -4,6 +4,8 @@ import connectDB from './connection/db.js';
 import userRoutes from './routes/user.router.js';
 import adminRoutes from "./routes/book.router.js";
 import favoriteRoutes from "./routes/favorite.router.js";
+import cartRoutes from "./routes/cart.router.js";
+import orderRoutes from "./routes/order.router.js";
 
 const app = express()
 
@@ -22,6 +24,8 @@ connectDB();
 app.use("/api/v1", userRoutes);
 app.use("/api/v1", adminRoutes);
 app.use("/api/v1", favoriteRoutes);
+app.use("/api/v1", cartRoutes);
+app.use("/api/v1", orderRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
