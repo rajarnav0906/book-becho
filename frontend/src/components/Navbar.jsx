@@ -68,7 +68,7 @@ const Navbar = () => {
             </div>
 
             {/* Search Bar */}
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <label className="px-3 py-1 border rounded-md flex items-center gap-2">
                 <input type="text" className="outline-none bg-transparent" placeholder="Search" />
                 <svg
@@ -84,7 +84,7 @@ const Navbar = () => {
                   />
                 </svg>
               </label>
-            </div>
+            </div> */}
 
             {/* Theme Toggle */}
             {/* <label className="swap swap-rotate">

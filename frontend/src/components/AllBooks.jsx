@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import { CardSpotlight } from "./CardSpotlight";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -8,24 +10,19 @@ const AllBooks = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/list.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch books");
-        return response.json();
-      })
-      .then((data) => {
-        setBooks(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
+    const fetch = async () => {
+      const response = await axios.get(
+        "http://localhost:4001/api/v1/get-all-books"
+      );
+      setBooks(response.data.data);
+    };
+    fetch();
   }, []);
 
-  if (loading) return <p className="text-white text-center">Loading...</p>;
-  if (error) return <p className="text-red-500 text-center">{error}</p>;
-  if (books.length === 0) return <p className="text-white text-center">No books available</p>;
+  // if (loading) return <p className="text-white text-center">Loading...</p>;
+  // if (error) return <p className="text-red-500 text-center">{error}</p>;
+  if (books.length === 0)
+    return <p className="text-white text-center">No books available</p>;
 
   return (
     <motion.div
@@ -59,8 +56,7 @@ const AllBooks = () => {
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
                 <img
-                  src={book.image}
-                  alt={book.name}
+                  src={book.url}
                   className="w-full h-full object-cover rounded-md opacity-40"
                   draggable="false"
                   style={{ filter: "blur(1px)" }}
@@ -78,14 +74,12 @@ const AllBooks = () => {
                 <p className="text-lg font-semibold text-yellow-200">
                   {book.price > 0 ? `$${book.price}` : "Free"}
                 </p>
-                <a
-                  href={book.read_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={`/book/${book._id}`}
                   className="flex items-center gap-2 border border-gray-500 px-3 py-1 rounded-md text-[#A6ADBB] bg-transparent hover:bg-[#b6d07a] hover:text-black transition duration-300"
                 >
-                  {book.price > 0 ? "Buy Now" : "Read Now"}
-                </a>
+                  Explore Now
+                </Link>
               </div>
             </CardSpotlight>
           </motion.div>

@@ -1,30 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { CardSpotlight } from "./CardSpotlight";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CardSlider = () => {
   const [freeBooks, setFreeBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // useEffect(() => {
+  //   fetch("/list.json")
+  //     .then((response) => {
+  //       if (!response.ok) throw new Error("Failed to fetch books");
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       const filteredBooks = data.filter((book) => book.price === 0);
+  //       setFreeBooks(filteredBooks);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("/list.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch books");
-        return response.json();
-      })
-      .then((data) => {
-        const filteredBooks = data.filter((book) => book.price === 0);
-        setFreeBooks(filteredBooks);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
+    const fetch = async () => {
+      const response = await axios.get("http://localhost:4001/api/v1/get-recent-books");
+      setFreeBooks(response.data.data);
+    }
+    fetch();
   }, []);
 
-  if (loading) return <p className="text-white text-center">Loading...</p>;
-  if (error) return <p className="text-red-500 text-center">{error}</p>;
+  // if (loading) return <p className="text-white text-center">Loading...</p>;
+  // if (error) return <p className="text-red-500 text-center">{error}</p>;
   if (freeBooks.length === 0) return <p className="text-white text-center">No free books available</p>;
 
   return (
@@ -46,7 +56,7 @@ const CardSlider = () => {
                 {/* Background Image with Blur Effect */}
                 <div className="absolute inset-0 w-full h-full">
                   <img
-                    src={book.image}
+                    src={book.url}
                     alt={book.name}
                     className="w-full h-full object-cover rounded-md opacity-40"
                     draggable="false"
@@ -63,20 +73,14 @@ const CardSlider = () => {
                 {/* Price & Button */}
                 <div className="relative z-10 flex justify-between items-center w-full mt-3">
                   <p className="text-lg font-semibold text-yellow-200">${book.price}</p>
-                  {book.read_link ? (
-                    <a
-                      href={book.read_link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  
+                    <Link
+                      to={`/book/${book._id}`}
                       className="flex items-center gap-2 border border-gray-500 px-3 py-1 rounded-md text-[#A6ADBB] bg-transparent hover:bg-[#b6d07a] hover:text-black transition duration-300"
                     >
-                      Read Now
-                    </a>
-                  ) : (
-                    <button className="flex items-center gap-2 border border-gray-500 px-3 py-1 rounded-md text-[#A6ADBB] bg-transparent hover:bg-[#b6d07a] hover:text-black transition duration-300">
-                      Buy Now
-                    </button>
-                  )}
+                      Explore Now
+                    </Link>
+                  
                 </div>
               </CardSpotlight>
             </div>
