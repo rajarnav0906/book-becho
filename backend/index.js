@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from "cors";
 import connectDB from './connection/db.js';
 import userRoutes from './routes/user.router.js';
 import adminRoutes from "./routes/book.router.js";
@@ -9,6 +10,7 @@ import orderRoutes from "./routes/order.router.js";
 
 const app = express()
 
+app.use(cors());
 app.use(express.json()); // allows express to use JSON body parsing
 
 dotenv.config({
