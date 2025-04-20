@@ -3,6 +3,7 @@ import { motion } from "framer-motion"; // Import Framer Motion
 import { CardSpotlight } from "./CardSpotlight";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loader from "./Loader"; // Import Loader component
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -11,16 +12,22 @@ const AllBooks = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get(
-        "http://localhost:4001/api/v1/get-all-books"
-      );
-      setBooks(response.data.data);
+      try {
+        const response = await axios.get("http://localhost:4001/api/v1/get-all-books");
+        setBooks(response.data.data);
+        setLoading(false); // Set loading to false after data is fetched
+      } catch (error) {
+        setError("Error fetching books.");
+        setLoading(false); // Set loading to false in case of an error
+      }
     };
     fetch();
   }, []);
 
-  // if (loading) return <p className="text-white text-center">Loading...</p>;
-  // if (error) return <p className="text-red-500 text-center">{error}</p>;
+  if (loading) return <Loader />; // Show Loader while fetching books
+
+  if (error) return <p className="text-red-500 text-center">{error}</p>;
+
   if (books.length === 0)
     return <p className="text-white text-center">No books available</p>;
 

@@ -1,20 +1,46 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Login from "./Login";
-import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const cartoonBg = "/signUpImg.jpg";
 
 const SignUp = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const [values, setValues] = useState({
+    username: "",
+    email: "",
+    password: "",
+    address: "",
+  });
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const loginModalRef = useRef(null); // 👈 Create a ref for the Login modal
+
+  const change = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const navigate = useNavigate();
+
+  const submit = async (e) => {
+    e.preventDefault();
+    try {
+      const { username, email, password, address } = values;
+      if (!username || !email || !password || !address) {
+        alert("All fields required!");
+      } else {
+        const response = await axios.post("http://localhost:4001/api/v1/signup", values);
+        console.log(response.data);
+
+        // 👇 Open login modal after successful signup
+        if (loginModalRef.current) {
+          loginModalRef.current.showModal();
+        }
+      }
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   };
 
   return (
@@ -45,71 +71,54 @@ const SignUp = () => {
           Join us and explore the world of books!
         </p>
 
-        <form className="mt-6 space-y-4" onSubmit={handleSubmit(onSubmit)}>
-          {/* Full Name */}
+        <form className="mt-6 space-y-4" onSubmit={submit}>
           <div>
             <label className="block text-sm font-medium">Full Name</label>
             <input
               type="text"
+              name="username"
               placeholder="Enter your name"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
-              {...register("name", { required: true })}
+              value={values.username}
+              onChange={change}
             />
-            {errors.name && (
-              <span className="text-red-500 text-sm mt-1">
-                This field is required
-              </span>
-            )}
           </div>
 
-          {/* Email */}
           <div>
             <label className="block text-sm font-medium">Email</label>
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
-              {...register("email", { required: true })}
+              value={values.email}
+              onChange={change}
             />
-            {errors.email && (
-              <span className="text-red-500 text-sm mt-1">
-                This field is required
-              </span>
-            )}
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-sm font-medium">Password</label>
             <input
               type="password"
+              name="password"
               placeholder="Create a password"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a]"
-              {...register("password", { required: true })}
+              value={values.password}
+              onChange={change}
             />
-            {errors.password && (
-              <span className="text-red-500 text-sm mt-1">
-                This field is required
-              </span>
-            )}
           </div>
 
-          {/* Address */}
           <div>
             <label className="block text-sm font-medium">Address</label>
             <textarea
+              name="address"
               placeholder="Enter your address"
               className="w-full p-2 mt-1 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-[#b6d07a] h-32"
-              {...register("address", { required: true, minLength: 10 })}
+              value={values.address}
+              onChange={change}
             />
-            {errors.address && (
-              <span className="text-red-500 text-sm mt-1">
-                Address must be at least 10 characters
-              </span>
-            )}
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             className="w-full bg-[#b6d07a] text-black font-semibold py-2 rounded-md hover:bg-[#a5c068] transition"
@@ -118,17 +127,18 @@ const SignUp = () => {
           </button>
         </form>
 
-        {/* Already have an account */}
         <p className="text-sm mt-4 text-center">
           Already have an account?{" "}
           <button
             className="text-[#b6d07a] hover:underline"
-            onClick={() => document.getElementById("my_modal_3").showModal()}
+            onClick={() => loginModalRef.current?.showModal()}
           >
             Log in
           </button>
-          <Login />
         </p>
+
+        {/* 👇 Pass ref to Login */}
+        <Login modalRef={loginModalRef} />
       </motion.div>
     </motion.div>
   );

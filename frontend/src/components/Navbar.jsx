@@ -1,30 +1,43 @@
 import React, { useState, useEffect } from "react";
 import Login from "./Login";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { authActions } from "../store/auth";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = (
-    <>
-      <li><a href = "/">Home</a></li>
-      <li><a href = "/books">Books</a></li>
-      <li><a>Contact</a></li>
-      <li><a>About</a></li>
-    </>
-  );
+  const handleLogout = () => {
+    localStorage.removeItem("id");
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    dispatch(authActions.logout());
+    navigate("/");
+  };
+
+  const links = [
+    { name: "Home", path: "/", type: "text" },
+    { name: "Books", path: "/books", type: "text" },
+    { name: "Contact", path: "/contact", type: "text" },
+    { name: "About", path: "/about", type: "text" },
+    { name: "Cart", path: "/cart", type: "icon", icon: "cart" },
+    { name: "Profile", path: "/profile", type: "icon", icon: "profile" },
+  ];
+
+  if (!isLoggedIn) {
+    links.splice(4, 2); // Remove Cart and Profile links if not logged in
+  }
 
   return (
     <div
@@ -35,9 +48,12 @@ const Navbar = () => {
       <div className="max-w-screen-full container mx-auto md:px-20 px-4">
         <div className="navbar">
           <div className="navbar-start">
-            {/* Mobile Menu */}
             <div className="dropdown">
-              <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -53,56 +69,90 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                {navItems}
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                {links
+                  .filter((link) => link.type === "text")
+                  .map((link, index) => (
+                    <li key={index}>
+                      <Link to={link.path}>{link.name}</Link>
+                    </li>
+                  ))}
               </ul>
             </div>
-            {/* Logo */}
-            <a className="btn btn-ghost text-3xl md:text-2xl text-[#b6d07a]">literaryLane</a>
+            <a className="btn btn-ghost text-3xl md:text-2xl text-[#b6d07a]">
+              literaryLane
+            </a>
           </div>
 
-          {/* Navbar Center (Desktop) */}
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">
+              {links
+                .filter((link) => link.type === "text")
+                .map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.path}>{link.name}</Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+
           <div className="navbar-end space-x-3">
-            <div className="navbar-center hidden lg:flex">
-              <ul className="menu menu-horizontal px-1">{navItems}</ul>
-            </div>
+            {isLoggedIn && (
+              <div className="flex items-center gap-3">
+                {links
+                  .filter((link) => link.type === "icon")
+                  .map((link, index) => {
+                    if (link.icon === "cart") {
+                      return (
+                        <Link to={link.path} key={index} className="relative group">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-7 h-7 fill-[#a6adbb]"
+                            viewBox="0 0 32 32"
+                          >
+                            <path d="M29.46 10.14A2.94 2.94 0 0 0 27.1 9H10.22L8.76 6.35A2.67 2.67 0 0 0 6.41 5H3a1 1 0 0 0 0 2h3.41a.68.68 0 0 1 .6.31l1.65 3 .86 9.32a3.84 3.84 0 0 0 4 3.38h10.37a3.92 3.92 0 0 0 3.85-2.78l2.17-7.82a2.58 2.58 0 0 0-.45-2.27zM28 11.86l-2.17 7.83A1.93 1.93 0 0 1 23.89 21H13.48a1.89 1.89 0 0 1-2-1.56L10.73 11H27.1a1 1 0 0 1 .77.35.59.59 0 0 1 .13.51z" />
+                            <circle cx="14" cy="26" r="2" />
+                            <circle cx="24" cy="26" r="2" />
+                          </svg>
+                        </Link>
+                      );
+                    }
 
-            {/* Search Bar */}
-            {/* <div className="hidden md:block">
-              <label className="px-3 py-1 border rounded-md flex items-center gap-2">
-                <input type="text" className="outline-none bg-transparent" placeholder="Search" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="h-4 w-4 opacity-70"
+                    if (link.icon === "profile") {
+                      return (
+                        <Link to="/profile" key={index}>
+                          <div className="btn btn-ghost btn-circle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-7 h-7 fill-[#a6adbb]"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2c0 .7.5 1.2 1.2 1.2h16.8c.7 0 1.2-.5 1.2-1.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z" />
+                            </svg>
+                          </div>
+                        </Link>
+                      );
+                    }
+
+                    return null;
+                  })}
+              </div>
+            )}
+
+            {!isLoggedIn && (
+              <div>
+                <a
+                  className="btn hover:bg-[#b6d07a] hover:text-black"
+                  onClick={() => document.getElementById("my_modal_3").showModal()}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </label>
-            </div> */}
-
-            {/* Theme Toggle */}
-            {/* <label className="swap swap-rotate">
-              <input type="checkbox" className="theme-controller" value="synthwave" />
-              <svg className="swap-off h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-              </svg>
-              <svg className="swap-on h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-              </svg>
-            </label> */}
-
-            {/* Login Button */}
-            <div><a className="btn hover:bg-[#b6d07a] hover:text-black"
-              onClick={() => document.getElementById("my_modal_3").showModal()}
-            >LogIn</a>
-            <Login></Login>
-            </div>
+                  LogIn
+                </a>
+                <Login />
+              </div>
+            )}
           </div>
         </div>
       </div>
