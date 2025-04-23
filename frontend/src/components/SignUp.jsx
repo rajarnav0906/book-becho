@@ -31,7 +31,7 @@ const SignUp = () => {
         alert("All fields required!");
       } else {
         const response = await axios.post("http://localhost:4001/api/v1/signup", values);
-        console.log(response.data);
+        // console.log(response.data);
 
         // 👇 Open login modal after successful signup
         if (loginModalRef.current) {

@@ -41,7 +41,7 @@ const CardSlider = () => {
     <div className="relative bg-gray-900 p-16 pb-6">
       {/* Header Section */}
       <h2 className="text-center text-[#b6d07a] text-2xl md:text-3xl font-bold mb-10 md:mb-12">
-        📚 Explore Free Books
+        📚 Explore Recent Books
       </h2>
 
       {/* Slider Wrapper */}
