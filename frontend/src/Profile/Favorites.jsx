@@ -80,7 +80,7 @@ function Favorites() {
                   to={`/book/${book._id}`}
                   className="px-2 py-1 text-xs border border-gray-500 rounded-md text-[#A6ADBB] hover:bg-[#b6d07a] hover:text-black transition duration-300"
                 >
-                  Explore
+                  Explore it
                 </Link>
               </div>
             </CardSpotlight>
