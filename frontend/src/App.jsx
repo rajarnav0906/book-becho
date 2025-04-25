@@ -10,6 +10,7 @@ import Profile from "./components/Profile";
 import Favorites from "./Profile/Favorites";
 import UserOrderHistory from "./Profile/UserOrderHistory";
 import Settings from "./Profile/Settings";
+import Cart from "./components/Cart";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/profile/order-history" element={<UserOrderHistory />} /> 
         <Route path="/profile/settings" element={<Settings />} /> 
       </Route>
+      <Route path="/cart" element={<Cart />} />
       
     </Routes>
   );

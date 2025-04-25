@@ -47,14 +47,14 @@ const ViewBookDetails = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-[#0a0a0a] relative px-4 py-16 flex justify-center items-center">
+      <div className="min-h-screen bg-[#1e1e1e] relative px-4 py-16 flex justify-center items-center">
         {/* Gradients */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0f0f0f] via-[#0a0a0a] to-[#1a1a1a]" />
-        <div className="absolute top-[-200px] right-[-200px] w-[400px] h-[400px] bg-[#6fc1ff22] rounded-full blur-3xl z-0" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#222] via-[#333] to-[#444]" />
+        <div className="absolute top-[-150px] right-[-150px] w-[400px] h-[400px] bg-[#6fc1ff22] rounded-full blur-3xl z-0" />
         <div className="absolute bottom-[-150px] left-[-150px] w-[300px] h-[300px] bg-[#b6d07a22] rounded-full blur-3xl z-0" />
 
         {/* Book Details Card */}
-        <div className="relative z-10 w-full max-w-6xl bg-[#111] rounded-2xl shadow-2xl border border-[#222] flex flex-col lg:flex-row overflow-hidden">
+        <div className="relative z-10 w-full max-w-6xl bg-[#121212] rounded-2xl shadow-2xl border border-[#333] flex flex-col lg:flex-row overflow-hidden">
           {/* Image Section */}
           <div className="lg:w-1/2 w-full p-4 sm:p-6 flex justify-center items-center">
             <div className="relative w-full max-w-md h-auto sm:h-[400px] rounded-xl overflow-hidden border-4 border-[#b6d07a] shadow-xl bg-[#1a1a1a]">
@@ -123,7 +123,7 @@ const ViewBookDetails = () => {
           {/* Info Section */}
           <div className="lg:w-1/2 w-full p-6 sm:p-8 flex flex-col justify-between text-gray-300 text-center lg:text-left items-center lg:items-start">
             <div className="w-full">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#b6d07a] mb-1">
+              <h1 className="text-3xl font-extrabold text-[#b6d07a] mb-1">
                 {book.title}
               </h1>
               <p className="text-sm sm:text-base text-[#6fc1ff] italic mb-6">
