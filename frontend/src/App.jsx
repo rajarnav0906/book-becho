@@ -11,6 +11,8 @@ import Favorites from "./Profile/Favorites";
 import UserOrderHistory from "./Profile/UserOrderHistory";
 import Settings from "./Profile/Settings";
 import Cart from "./components/Cart";
+import AllOrders from "./components/AllOrders";
+import AddBooks from "./components/AddBooks";
 
 function App() {
 
@@ -29,9 +31,10 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/book/:id" element={<ViewBookDetails />} />
       <Route path="/profile" element={<Profile />}>
-        <Route index element={<Favorites />} />
+        {role === "user" ? <Route index element={<Favorites />} /> : <Route index element={<AllOrders />} />}
         <Route path="/profile/order-history" element={<UserOrderHistory />} /> 
         <Route path="/profile/settings" element={<Settings />} /> 
+        <Route path="/profile/add-book" element={<AddBooks />} /> 
       </Route>
       <Route path="/cart" element={<Cart />} />
       

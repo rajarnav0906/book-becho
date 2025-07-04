@@ -43,14 +43,12 @@ function Favorites() {
   if (favoriteBooks.length === 0) {
     return (
       <div className="bg-black min-h-screen text-white flex flex-col items-center justify-center px-4 relative overflow-hidden">
+        {/* Background blob */}
         <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#b6d07a] to-[#86c232] opacity-30 blur-3xl animate-pulse z-0" />
-        <img
-          src="/empty-favorites.svg"
-          alt="Empty"
-          className="w-48 mb-4 opacity-60 z-10"
-        />
+
+        {/* No image here */}
         <h2 className="text-2xl font-semibold mb-2 z-10">Your Favorites</h2>
-        <p className="text-gray-400 text-sm z-10">
+        <p className="text-gray-400 text-sm z-10 text-center">
           You haven't added any favorite books yet.
         </p>
       </div>
@@ -59,6 +57,7 @@ function Favorites() {
 
   return (
     <div className="relative bg-black text-white min-h-screen px-6 md:px-12 lg:px-20 py-10 overflow-hidden">
+      {/* Background blob */}
       <div className="absolute top-[-120px] left-[-80px] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-[#b6d07a] to-[#86c232] opacity-30 blur-3xl animate-pulse z-0" />
 
       <div className="relative z-10 text-center mb-10">

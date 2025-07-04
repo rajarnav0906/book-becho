@@ -9,21 +9,29 @@ const router = Router();
 
 // place an order
 router.post("/place-order", authenticateToken, async (req, res) => {
-    const {id} = req.headers;
-    const {order} = req.body;
-    for(const orderData of order){
-        const newOrder = new Order({buyer : id, book : orderData._id});
+    const { id } = req.headers;
+    const { orders } = req.body; // Note: Corrected "order" → "orders"
+
+    for (const orderData of orders) {
+        const newOrder = new Order({
+            buyer: id,
+            seller: orderData.seller,  // ✅ Now adding seller
+            book: orderData.book,      // ✅ Properly mapped
+            message: orderData.message || "",  // optional if you want
+        });
+
         const orderDataFromDB = await newOrder.save();
 
         // saving order in user model
-        await User.findByIdAndUpdate(id, { $push : {orders: orderDataFromDB._id}});
+        await User.findByIdAndUpdate(id, { $push: { orders: orderDataFromDB._id } });
 
         // clearing cart
-        await User.findByIdAndUpdate(id, {$pull: {cart: orderData._id}});
+        await User.findByIdAndUpdate(id, { $pull: { cart: orderData.book } });
     }
 
-    return res.json({status: "Success", message: "Order placed successfully!"});
+    return res.json({ status: "Success", message: "Order placed successfully!" });
 });
+
 
 // get order history
 router.get("/order-history", authenticateToken, async (req, res) => {
@@ -35,7 +43,7 @@ router.get("/order-history", authenticateToken, async (req, res) => {
         });
 
         const ordersData = userData.orders.reverse();
-        return res.json({status: "Success", data: "ordersData"});
+        return res.json({status: "Success", data: ordersData});
     } 
     catch (error) {
         res.status(500).json({message: "Internal server error"});

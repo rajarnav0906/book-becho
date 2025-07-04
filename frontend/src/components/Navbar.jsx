@@ -7,6 +7,7 @@ import { authActions } from "../store/auth";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const role = useSelector((state) => state.auth.role);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,10 +34,19 @@ const Navbar = () => {
     { name: "About", path: "/about", type: "text" },
     { name: "Cart", path: "/cart", type: "icon", icon: "cart" },
     { name: "Profile", path: "/profile", type: "icon", icon: "profile" },
+    { name: "Admin-Profile", path: "/profile", type: "icon", icon: "adminProfile" },
   ];
 
   if (!isLoggedIn) {
     links.splice(4, 2); // Remove Cart and Profile links if not logged in
+  }
+
+  if (isLoggedIn && role === "user") {
+    links.splice(6, 1); // Remove admin profile if user
+  }
+
+  if (isLoggedIn && role === "admin") {
+    links.splice(5, 1); // Remove normal profile if admin
   }
 
   return (
@@ -131,6 +141,22 @@ const Navbar = () => {
                               viewBox="0 0 24 24"
                             >
                               <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2c0 .7.5 1.2 1.2 1.2h16.8c.7 0 1.2-.5 1.2-1.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z" />
+                            </svg>
+                          </div>
+                        </Link>
+                      );
+                    }
+
+                    if (link.icon === "adminProfile") {
+                      return (
+                        <Link to="/profile" key={index}>
+                          <div className="btn btn-ghost btn-circle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-7 h-7 fill-[#facc15]"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 2a7 7 0 0 1 7 7v1.586l1.707 1.707A1 1 0 0 1 20.293 14H3.707a1 1 0 0 1-.707-1.707L4.707 10.586V9a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5v1h10V9a5 5 0 0 0-5-5zm-1 9v6h2v-6h-2z" />
                             </svg>
                           </div>
                         </Link>

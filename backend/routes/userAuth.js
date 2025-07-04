@@ -4,7 +4,7 @@ import User from "../models/user.model.js";
 export const authenticateToken = async (req, res, next) => {
   try {
     const authHeader = req.headers["authorization"];
-    const token = authHeader && authHeader.split(" ")[1]; // Get Bearer token
+    const token = authHeader && authHeader.split(" ")[1]; // Get Bearer token 
 
     if (!token) {
       return res.status(401).json({ message: "Token not provided." });
@@ -12,7 +12,7 @@ export const authenticateToken = async (req, res, next) => {
 
     // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    console.log("Decoded JWT:", decoded);
+    // console.log("Decoded JWT:", decoded);
 
     // Find user in DB to attach full user data
     const user = await User.findById(decoded.id).select("-password");

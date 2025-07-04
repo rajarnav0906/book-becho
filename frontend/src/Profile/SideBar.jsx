@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '../store/auth';
 
 // Lucide Icons
-import { Home, BookOpen, Heart, History, Settings, LogOut, Menu, X } from 'lucide-react';
+import { Home, BookOpen, Heart, History, Settings, LogOut, Menu, X, PlusCircle, ClipboardList } from 'lucide-react';
 
 const SideBar = ({ data, modalRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const role = useSelector((state) => state.auth.role); // inside component
 
   const toggleSidebar = () => setIsOpen(prev => !prev);
   const closeSidebar = () => setIsOpen(false);
@@ -54,11 +55,22 @@ const SideBar = ({ data, modalRef }) => {
           {/* Links */}
           <div className="border-t border-[#2a2a2a] my-4"></div>
           <nav className="space-y-3">
+
             <SidebarLink to="/" label="Home" icon={<Home className="w-5 h-5" />} close={closeSidebar} />
             <SidebarLink to="/books" label="Browse Books" icon={<BookOpen className="w-5 h-5" />} close={closeSidebar} />
-            <SidebarLink to="/profile" label="Favorites" icon={<Heart className="w-5 h-5" />} close={closeSidebar} />
-            <SidebarLink to="/profile/order-history" label="Order History" icon={<History className="w-5 h-5" />} close={closeSidebar} />
-            <SidebarLink to="/profile/settings" label="Settings" icon={<Settings className="w-5 h-5" />} close={closeSidebar} />
+
+            {role === 'admin' ? (
+              <>
+                <SidebarLink to="/profile" label="All Orders" icon={<ClipboardList className="w-5 h-5" />} close={closeSidebar} />
+                <SidebarLink to="/profile/add-book" label="Add Book" icon={<PlusCircle className="w-5 h-5" />} close={closeSidebar} />
+              </>
+            ) : (
+              <>
+                <SidebarLink to="/profile" label="Favorites" icon={<Heart className="w-5 h-5" />} close={closeSidebar} />
+                <SidebarLink to="/profile/order-history" label="Order History" icon={<History className="w-5 h-5" />} close={closeSidebar} />
+                <SidebarLink to="/profile/settings" label="Settings" icon={<Settings className="w-5 h-5" />} close={closeSidebar} />
+              </>
+            )}
           </nav>
 
           {/* Logout */}
